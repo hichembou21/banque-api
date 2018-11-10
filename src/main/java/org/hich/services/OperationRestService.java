@@ -42,11 +42,11 @@ public class OperationRestService {
 
 	@RequestMapping(value="/virement", method=RequestMethod.PUT)
 	public boolean virement(
-			@RequestParam String codeCompte1, 
+			@RequestParam String codeCompte,
 			@RequestParam String codeCompte2, 
 			@RequestParam double montant, 
 			@RequestParam Long employe) {
-		return operationMetier.virement(codeCompte1, codeCompte2, montant, employe);
+		return operationMetier.virement(codeCompte, codeCompte2, montant, employe);
 	}
 	
 	
