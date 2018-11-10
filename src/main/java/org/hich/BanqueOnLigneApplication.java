@@ -100,6 +100,5 @@ public class BanqueOnLigneApplication implements CommandLineRunner {
 		Compte cpt4 = new CompteEpargne("ce4", 100, 2.5, e1);
 		compteMetier.addCompte(cpt4, c3.getId());
 
-
 	}
 }

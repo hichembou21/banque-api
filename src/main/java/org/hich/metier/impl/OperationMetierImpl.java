@@ -75,9 +75,9 @@ public class OperationMetierImpl implements OperationMetier {
 
 	@Override
 	@Transactional
-	public boolean virement(String codeCompte1, String codeCompte2, double montant, Long codeEmploye) {
+	public boolean virement(String codeCompte, String codeCompte2, double montant, Long codeEmploye) {
 
-		debiter(codeCompte1, montant, codeEmploye);
+		debiter(codeCompte, montant, codeEmploye);
 		crediter(codeCompte2, montant, codeEmploye);
 		return true;
 	}
