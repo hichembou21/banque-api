@@ -100,10 +100,6 @@ public class BanqueOnLigneApplication implements CommandLineRunner {
 		Compte cpt4 = new CompteEpargne("ce4", 100, 2.5, e1);
 		compteMetier.addCompte(cpt4, c3.getId());
 
-//		operationRepository.save(new Versement(new Date(), 1000, cpt1));
-//		operationRepository.save(new Versement(new Date(), 500, cpt2));
-//		operationRepository.save(new Versement(new Date(), 1000, cpt3));
-//		operationRepository.save(new Retrait(new Date(), 200, cpt3));
-//		operationRepository.save(new Retrait(new Date(), 100, cpt4));
+
 	}
 }
