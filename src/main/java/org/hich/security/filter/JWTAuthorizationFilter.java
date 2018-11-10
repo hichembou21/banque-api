@@ -32,8 +32,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter  {
 		response.addHeader("Access-Control-Allow-Methods", "HEAD, OPTIONS, GET, POST, PUT, PATCH");
 
 		String jwtToken = request.getHeader(SecurityContants.HEADER_STRING);
-		System.out.println(jwtToken);
-		
+
 		if (request.getMethod().equals("OPTIONS")) {
 			
 			response.setStatus(HttpServletResponse.SC_OK);
