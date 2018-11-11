@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 //@CrossOrigin("*")
-@RequestMapping(value="/operations")
 public class OperationRestService {
 
 	@Autowired
@@ -24,7 +23,7 @@ public class OperationRestService {
 		return operationMetier.listOperations(codeCompte, page, size);
 	}
 
-	@RequestMapping(value="/crediter", method=RequestMethod.PUT) 
+	@RequestMapping(value="/operations/crediter", method=RequestMethod.PUT)
 	public boolean crediter(
 			@RequestParam String codeCompte, 
 			@RequestParam double montant, 
@@ -32,7 +31,7 @@ public class OperationRestService {
 		return operationMetier.crediter(codeCompte, montant, employe);
 	}
 
-	@RequestMapping(value="/debiter", method=RequestMethod.PUT)
+	@RequestMapping(value="/operations/debiter", method=RequestMethod.PUT)
 	public boolean debiter(
 			@RequestParam String codeCompte, 
 			@RequestParam double montant, 
@@ -40,7 +39,7 @@ public class OperationRestService {
 		return operationMetier.debiter(codeCompte, montant, employe);
 	}
 
-	@RequestMapping(value="/virement", method=RequestMethod.PUT)
+	@RequestMapping(value="/client/operations/virement", method=RequestMethod.PUT)
 	public boolean virement(
 			@RequestParam String codeCompte,
 			@RequestParam String codeCompte2, 
@@ -48,7 +47,14 @@ public class OperationRestService {
 			@RequestParam Long employe) {
 		return operationMetier.virement(codeCompte, codeCompte2, montant, employe);
 	}
-	
-	
+
+//	@RequestMapping(value="/client/operations/virement", method=RequestMethod.PUT)
+//	public boolean virementFromClient(
+//			@RequestParam String codeCompte,
+//			@RequestParam String codeCompte2,
+//			@RequestParam double montant,
+//			@RequestParam Long employe) {
+//		return operationMetier.virement(codeCompte, codeCompte2, montant, employe);
+//	}
 
 }
