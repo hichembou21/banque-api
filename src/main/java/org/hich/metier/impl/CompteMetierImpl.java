@@ -36,7 +36,14 @@ public class CompteMetierImpl implements CompteMetier {
 		if (compte == null) throw new RuntimeException("Compte inexistant !!");
 		return compte;
 	}
-	
-	
+
+    @Override
+    public Compte getCompteForClient(String code, Long codeClient) {
+        Compte compte = compteRepository.findById(code).orElse(null);
+        if (compte == null) throw new RuntimeException("Compte inexistant !!");
+        if (!compte.getClient().getId().equals(codeClient)) throw new RuntimeException("Vous avez pas le droit de consulter ce compte !!");
+        return compte;
+    }
+
 
 }

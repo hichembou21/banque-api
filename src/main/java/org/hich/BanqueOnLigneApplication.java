@@ -92,11 +92,11 @@ public class BanqueOnLigneApplication implements CommandLineRunner {
 		Client c3 = (Client) accountService.findUserByUsername("hich");
 
 		Compte cpt1 = new CompteCourant("cc1", 1000, 500, e1);
-		compteMetier.addCompte(cpt1, c1.getId());
+		compteMetier.addCompte(cpt1, c2.getId());
 		Compte cpt2 = new CompteCourant("cc2", 400, 200, e1);
-		compteMetier.addCompte(cpt2, c1.getId());
+		compteMetier.addCompte(cpt2, c2.getId());
 		Compte cpt3 = new CompteCourant("cc3", 200, 400, e1);
-		compteMetier.addCompte(cpt3, c2.getId());
+		compteMetier.addCompte(cpt3, c3.getId());
 		Compte cpt4 = new CompteEpargne("ce4", 100, 2.5, e1);
 		compteMetier.addCompte(cpt4, c3.getId());
 
