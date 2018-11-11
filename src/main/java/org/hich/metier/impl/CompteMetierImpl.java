@@ -31,8 +31,10 @@ public class CompteMetierImpl implements CompteMetier {
 
 	@Override
 	public Compte getCompte(String code) {
-		
-		return compteRepository.findById(code).orElse(null);
+
+		Compte compte = compteRepository.findById(code).orElse(null);
+		if (compte == null) throw new RuntimeException("Compte inexistant !!");
+		return compte;
 	}
 	
 	

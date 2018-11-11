@@ -77,6 +77,7 @@ public class OperationMetierImpl implements OperationMetier {
 	@Transactional
 	public boolean virement(String codeCompte, String codeCompte2, double montant, Long codeEmploye) {
 
+		if (codeCompte.equals(codeCompte2)) throw new RuntimeException("Virement sur le même compte impossible");
 		debiter(codeCompte, montant, codeEmploye);
 		crediter(codeCompte2, montant, codeEmploye);
 		return true;
